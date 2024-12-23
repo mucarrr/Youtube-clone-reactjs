@@ -1,5 +1,5 @@
 import axios from "axios";
-console.log(import.meta.env);
+
 const api = axios.create({
   baseURL: "https://yt-api.p.rapidapi.com",
   params: {

@@ -4,7 +4,7 @@ import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import millify from "millify";
 
-const Comments = ({ videoId }) => {
+const Comments = ({ videoId, video }) => {
   const [comments, setComments] = useState(null);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -16,18 +16,19 @@ const Comments = ({ videoId }) => {
       .then((res) => setComments(res.data.data))
       .catch((err) => setError(err));
   }, [videoId]);
+
   return (
     <div className="my-6">
       {error ? (
-        <p>error var</p>
+        <p>Comments could not be loaded!</p>
       ) : !comments ? (
-        <p>yorum yukleniyor</p>
+        <p>Comments loading..</p>
       ) : comments.length === 0 ? (
-        <p>yorum yok</p>
+        <p>No comment</p>
       ) : (
-        <>
+        <div>
           <h2 className="text-xl font-bold">
-            {millify(comments.commentsCount)} Comments
+            {millify(video.commentCount)} Comments
           </h2>
           <input
             type="text"
@@ -70,7 +71,7 @@ const Comments = ({ videoId }) => {
               </div>
             </div>
           ))}
-        </>
+        </div>
       )}
     </div>
   );

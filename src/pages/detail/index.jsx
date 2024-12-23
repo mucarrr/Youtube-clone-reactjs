@@ -25,7 +25,7 @@ const Detail = () => {
   }, [id]);
 
   return (
-    <div className="detail-page h-screen overflow-y-auto overflow-x-hidden">
+    <div className="detail-page h-screen overflow-y-auto overflow-x-hidden ms-4">
       <div className="page-content">
         <div>
           <div className="h-[60vh] md:h-[50vh] lg:h-[60h] rounded overflow-hidden ">
@@ -46,7 +46,7 @@ const Detail = () => {
               <h1 className="my-3 text-xl font-bold">{video.title}</h1>
               <Channel video={video} />
               <Description video={video} />
-              <Comments videoId={id} />
+              <Comments video={video} videoId={id} />
             </div>
           )}
         </div>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Card = ({ item, isRow }) => {
   const [isHover, setIsHover] = useState(false);
   if (item.type !== "video") return null;
+  console.log(item);
 
   return (
     <Link
@@ -15,7 +16,10 @@ const Card = ({ item, isRow }) => {
     >
       <div>
         {isHover && item.richThumbnail ? (
-          <img src={item.richThumbnail && item.richThumbnail[0].url} />
+          <img
+            src={item.richThumbnail && item.richThumbnail[0].url}
+            style={{ width: "100%", height: "100%" }}
+          />
         ) : (
           <img
             src={item.thumbnail[item.thumbnail.length - 1].url}

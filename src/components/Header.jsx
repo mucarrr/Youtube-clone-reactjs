@@ -18,8 +18,8 @@ const Header = () => {
   return (
     <header className="px-2 py-4 sm:px-4 flex justify-between items-center">
       <Link to="/" className="flex gap-[6px] items-center">
-        <img className="w-9 h-6" src="/youtube.png" alt="youtube logo" />
-        <h1 className="text-xl sm:text-2xl">YouTube</h1>
+        <img className="w-9 h-6 ms-2" src="/youtube.png" alt="youtube logo" />
+        <h1 className="text-xl sm:text-[30px]">YouTube</h1>
       </Link>
       <form
         onSubmit={handleSubmit}
