@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+header {
+  h1 {
+    font-family: "Roboto Condensed", serif;
+  }
+}
+.videos {
+  padding: 20px;
+  width: 100%;
+  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.page-content {
+  max-width: 1600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto 400px;
+  gap: 40px 60px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 168px auto;
+  gap: 20px;
+  .pp {
+    display: none;
+  }
+}
+@media (min-width: 730px) {
+  .wrapper .row {
+    grid-template-columns: 1fr 2fr !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-content {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
+}
